@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+
+// Set your brand colors
+$light-tiffany-blue: #6fffe9;
+$tiffany-blue: #5bc0be;
+$slate-blue: #394f6c;
+$dark-blue: #1c2442;
+$deep-blue: #0b122c;
+
+// Update Bulma's global variables
+$family-sans-serif: "Montserrat", sans-serif;
+$grey-dark: $slate-blue;
+$grey-light: $dark-blue;
+$primary: $light-tiffany-blue;
+$link: $tiffany-blue;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $deep-blue;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Import the Bulma styles
+@import "~bulma";
