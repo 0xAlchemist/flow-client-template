@@ -1,1 +1,8 @@
 /node_modules/
+
+# parcel builds
+.cache/
+dist/
+
+# yarn
+yarn-error.log
