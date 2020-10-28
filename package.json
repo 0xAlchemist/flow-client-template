@@ -7,8 +7,14 @@
   "author": "@0xAlchemist",
   "license": "MIT",
   "dependencies": {
+    "@onflow/fcl": "0.0.60",
+    "@onflow/types": "0.0.4",
+    "buffer": "^5.6.1",
+    "https-browserify": "^1.0.0",
     "react": "^16.14.0",
-    "react-dom": "^16.14.0"
+    "react-dom": "^16.14.0",
+    "regenerator-runtime": "^0.13.7",
+    "stream-http": "^3.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -38,6 +44,7 @@
     "webpack-merge": "^5.2.0"
   },
   "scripts": {
+    "dev:wallet": "PK=bf9db4706c2fdb9011ee7e170ccac492f05427b96ab41d8bf2d8c58443704b76 dev-wallet",
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js"
   }

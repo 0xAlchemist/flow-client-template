@@ -4,6 +4,13 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const paths = require("./paths");
 
 module.exports = {
+  resolve: {
+    fallback: {
+      buffer: require.resolve("buffer/"),
+      http: require.resolve("stream-http"),
+      https: require.resolve("https-browserify"),
+    },
+  },
   // Entry point where webpack looks to build the bundle
   entry: [paths.src + "/index.js"],
 
