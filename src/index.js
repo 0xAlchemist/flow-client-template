@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import regeneratorRuntime from "regenerator-runtime";
 import ReactDOM from "react-dom";
-import * as fcl from "@onflow/fcl";
+import fcl from "./flow/config";
 import * as t from "@onflow/types";
 
 import { SignIn } from "./components/SignIn";
@@ -10,6 +10,21 @@ import App from "./App";
 // pass objects to window context
 window.fcl = fcl;
 window.types = t;
+
+const runGetLatestBlock = async () => {
+  const response = await fcl.send([
+    fcl.script`
+    pub fun main(): UInt64 {
+      return getCurrentBlock().height
+    }
+  `,
+  ]);
+
+  const blockData = await fcl.decode(response);
+  console.log({ blockData });
+};
+
+window.runGetLatestBlock = runGetLatestBlock;
 
 // conversion method for window context
 window.convertToHex = function (str) {
@@ -20,13 +35,7 @@ window.convertToHex = function (str) {
 };
 
 // test contract address
-window.TEST_CONTRACT_ADDRESS = "0x01cf0e2f2f715450";
-
-fcl
-  .config()
-  // EMULATOR SETUP
-  .put("accessNode.api", "http://localhost:8080")
-  .put("challenge.handshake", "http://localhost:8701/flow/authenticate");
+// window.TEST_CONTRACT_ADDRESS = "0x01cf0e2f2f715450";
 
 const AppContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);

@@ -22,7 +22,8 @@
     "parcel": "^1.12.4",
     "postcss-preset-env": "^6.7.0",
     "prop-types": "^15.7.2",
-    "react-bulma-components": "3.4.0"
+    "react-bulma-components": "3.4.0",
+    "sass": "^1.27.0"
   },
   "scripts": {
     "dev:wallet": "PK=bf9db4706c2fdb9011ee7e170ccac492f05427b96ab41d8bf2d8c58443704b76 dev-wallet",
